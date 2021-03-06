@@ -21,7 +21,7 @@ const SearchUser = () => {
 
   return (
     <div>
-      <h1>Look up a username on GitHub</h1>
+      <h1>{`Look up a username on GitHub ${userData}`}</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="anewman15" value={username} onChange={handleChange} />
         <button type="submit">Search</button>
