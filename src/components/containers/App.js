@@ -1,13 +1,12 @@
-import SearchUser from '../presentational/SearchUser';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from '../../Routes/Routes';
 import TopNav from '../presentational/TopNav';
-import UserInfo from './UserInfo';
 
 const App = () => (
-  <div className="App">
+  <BrowserRouter>
     <TopNav />
-    <SearchUser />
-    <UserInfo />
-  </div>
+    <Routes />
+  </BrowserRouter>
 );
 
 export default App;
