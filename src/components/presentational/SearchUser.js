@@ -1,11 +1,14 @@
+import { useState } from 'react';
+
 const SearchUser = () => {
-  const text = 'Search';
+  const [username, setUsername] = useState('anewman15');
+
   return (
     <div>
       <h1>Look up a developer on GitHub</h1>
       <form>
-        <input type="text" />
-        <button type="submit">{text}</button>
+        <input type="text" placeholder="anewman15" value={username} onClick={handleChange} />
+        <button type="submit">Search</button>
       </form>
     </div>
   );
