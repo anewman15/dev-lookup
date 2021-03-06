@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import fetchData from '../../sandbox/fetchData';
 
 const SearchUser = () => {
@@ -9,6 +9,10 @@ const SearchUser = () => {
   const handleChange = e => {
     setUsername(e.target.value);
   };
+
+  useEffect(() => {
+    fetchData(uri, username, setUserData);
+  }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
