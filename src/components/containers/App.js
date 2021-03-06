@@ -1,10 +1,10 @@
 import SearchUser from '../presentational/SearchUser';
-import UserRepos from './UserRepos';
+import UserInfo from './UserInfo';
 
 const App = () => (
   <div className="App">
     <SearchUser />
-    <UserRepos />
+    <UserInfo />
   </div>
 );
 
