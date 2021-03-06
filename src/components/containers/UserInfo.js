@@ -1,3 +1,4 @@
+import SkillsFilter from '../presentational/SkillsFilter';
 import UserRepos from './UserRepos';
 
 const UserInfo = () => {
@@ -6,6 +7,7 @@ const UserInfo = () => {
     <div>
       {`${user}`}
       <UserRepos />
+      <SkillsFilter />
     </div>
   );
 };
