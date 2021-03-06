@@ -1,9 +1,9 @@
-const App = () => {
-  return (
-    <div className="App">
-      <h1>Hello, welcome</h1>
-    </div>
-  );
-}
+import SearchUser from '../presentational/SearchUser';
+
+const App = () => (
+  <div className="App">
+    <SearchUser />
+  </div>
+);
 
 export default App;
