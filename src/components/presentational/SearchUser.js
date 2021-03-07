@@ -4,7 +4,7 @@ import fetchData from '../../sandbox/fetchData';
 const SearchUser = () => {
   const [username, setUsername] = useState('anewman15');
   const [userData, setUserData] = useState([]);
-  const uri = `https://api.github.com/users/${username}/repos`;
+  const uri = `https://api.github.com/users/${username}/repos?per_page=100`;
 
   const handleChange = e => {
     setUsername(e.target.value);
@@ -18,6 +18,8 @@ const SearchUser = () => {
     e.preventDefault();
     fetchData(uri, username, setUserData);
   };
+
+  console.log(userData);
 
   return (
     <div>
