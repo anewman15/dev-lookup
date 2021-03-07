@@ -1,12 +1,12 @@
-import { GET_USER_REPOS } from './actionTypes';
+import { SAVE_USER_REPOS } from './actionTypes';
 
-export const getUserRepos = username => (
+export const saveUserRepos = userRepos => (
   {
-    type: GET_USER_REPOS,
+    type: SAVE_USER_REPOS,
     payload: {
-      username,
+      userRepos,
     },
   }
 );
 
-export default { getUserRepos };
+export default { saveUserRepos };
