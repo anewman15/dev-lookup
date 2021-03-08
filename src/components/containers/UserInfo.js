@@ -11,7 +11,7 @@ import Loading from '../presentational/Loading';
 import UserNotFound from '../presentational/UserNotFound';
 import SomethingWentWrong from '../presentational/SomethingWentWrong';
 import SearchUser from '../presentational/SearchUser';
-import SkillsFilter from '../presentational/SkillsFilter';
+import NoRepos from '../presentational/NoRepos';
 import UserRepos from './UserRepos';
 
 const UserInfo = ({ userRepos, saveUserRepos }) => {
@@ -60,11 +60,10 @@ const UserInfo = ({ userRepos, saveUserRepos }) => {
       {userRepos.length ? userRepos[0].owner.login : null}
       <SearchUser handleChange={handleChange} handleSubmit={handleSubmit} username={username} />
       {isLoading ? <Loading /> : null}
-      {userRepos ? <UserRepos /> : null}
+      {userRepos ? <UserRepos username={username} /> : null}
+      {userRepos.length === 0 ? <NoRepos username={username} /> : null}
       {notFound ? <UserNotFound /> : null}
       {error ? <SomethingWentWrong /> : null}
-
-      <SkillsFilter />
     </div>
   );
 };
