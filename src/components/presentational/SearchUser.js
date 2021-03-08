@@ -1,29 +1,10 @@
-import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { saveUserRepos } from '../../redux/actions/user';
-import fetchData from '../../sandbox/fetchData';
 
-const SearchUser = ({ userRepos, saveUserRepos }) => {
-  const [username, setUsername] = useState('anewman15');
-  const uri = `https://api.github.com/users/${username}/repos?per_page=100`;
-
-  const handleChange = e => {
-    setUsername(e.target.value);
-  };
-
-  useEffect(() => {
-    fetchData(uri, username, saveUserRepos);
-  }, []);
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    fetchData(uri, username, saveUserRepos);
-  };
-
+const SearchUser = ({ username, handleChange, handleSubmit }) => {
+  const userRepos = 'Hi';
   return (
     <div>
-      <h1>{`Look up a username on GitHub ${userRepos[0].id}`}</h1>
+      <h1>{`Look up a username on GitHub ${userRepos}`}</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="anewman15" value={username} onChange={handleChange} />
         <button type="submit">Search</button>
@@ -33,11 +14,9 @@ const SearchUser = ({ userRepos, saveUserRepos }) => {
 };
 
 SearchUser.propTypes = {
-  userRepos: PropTypes.array,
+  handleChange: PropTypes.function,
+  handleSubmit: PropTypes.function,
+  username: PropTypes.string,
 }.isRequired;
 
-const mapStateToProps = state => ({
-  userRepos: [...state.userRepos],
-});
-
-export default connect(mapStateToProps, { saveUserRepos })(SearchUser);
+export default SearchUser;
