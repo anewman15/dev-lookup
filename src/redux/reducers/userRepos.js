@@ -1,4 +1,4 @@
-const user = (state, action) => {
+const userRepos = (state, action) => {
   switch (action.type) {
     case 'SAVE_USER_REPOS': {
       return {
@@ -12,4 +12,4 @@ const user = (state, action) => {
   }
 };
 
-export default user;
+export default userRepos;
