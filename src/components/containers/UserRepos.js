@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Repo from './Repo';
 
 const UserRepos = ({ userRepos }) => {
-  const repos = userRepos.map(repo => <h1 key={repo.id + 1}>{repo.id}</h1>);
+  const repos = userRepos.map((repo, index) => <Repo key={repo.id} repo={repo} index={index} />);
 
   return (
     <div>
