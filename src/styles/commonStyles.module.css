@@ -6,18 +6,21 @@
 .flexCenter {
   display: flex;
   justify-content: center;
+  align-content: center;
   align-items: center;
 }
 
 .flexBetween {
   display: flex;
   justify-content: space-between;
+  align-content: center;
   align-items: center;
 }
 
 .flexStart {
   display: flex;
   justify-content: flex-start;
+  align-content: center;
   align-items: center;
 }
 

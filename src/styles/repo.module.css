@@ -1,0 +1,22 @@
+.paragraph {
+  margin: 0 2rem;
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+}
+
+.repoUrl {
+  margin: 1rem 0;
+}
+
+.repoLink {
+  margin: 0 2rem;
+  padding: 0.3rem 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(51, 51, 51);
+  font-weight: bolder;
+}
+
+.repoLink:hover {
+  color: rgb(170, 164, 164);
+}
