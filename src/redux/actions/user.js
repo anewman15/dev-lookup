@@ -1,6 +1,6 @@
 import { SAVE_USER_REPOS } from './actionTypes';
 
-export const saveUserRepos = userRepos => (
+const saveUserRepos = userRepos => (
   {
     type: SAVE_USER_REPOS,
     payload: {
@@ -9,4 +9,4 @@ export const saveUserRepos = userRepos => (
   }
 );
 
-export default { saveUserRepos };
+export default saveUserRepos;
