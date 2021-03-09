@@ -1,4 +1,4 @@
-const fetchData = async args => {
+const fetchUserRepos = async args => {
   try {
     args.setIsLoading(true);
     const response = await fetch(args.uri, {
@@ -38,4 +38,21 @@ const fetchData = async args => {
   }
 };
 
-export default fetchData;
+const fetchRepoDetails = async args => {
+  try {
+    args.setIsLoading(true);
+    const response = await fetch(args.uri);
+    const data = await response.json();
+    if (data instanceof Object && data.id) {
+      args.setRepoDetails(data);
+      args.setError(false);
+      args.setIsLoading(false);
+    }
+  } catch {
+    args.setError(true);
+    args.setRepoDetails({});
+    args.setIsLoading(false);
+  }
+};
+
+export { fetchUserRepos, fetchRepoDetails };
