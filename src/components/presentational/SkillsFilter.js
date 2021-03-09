@@ -7,12 +7,15 @@ const SkillsFilter = () => {
     setFilter(e.target.value);
   };
 
-  console.log(filter);
+  const handleSubmit = e => {
+    e.preventDefault();
+    setFilter('');
+  };
 
   return (
     <div>
       <h3>Filter by skills</h3>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Ruby" value={filter} onChange={handleChange} />
         <button type="submit">Filter</button>
       </form>
