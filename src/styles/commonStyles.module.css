@@ -15,6 +15,12 @@
   align-items: center;
 }
 
+.flexStart {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .textCenter {
   text-align: center;
 }
