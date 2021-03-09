@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import changeFilter from '../../redux/actions/filters';
+import common from '../../styles/commonStyles.module.css';
 
 const SkillsFilter = ({ filters, changeFilter }) => {
   const [filter, setFilter] = useState('Ruby');
@@ -17,12 +18,14 @@ const SkillsFilter = ({ filters, changeFilter }) => {
   };
 
   return (
-    <div>
-      <h3>Filter by skills</h3>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Ruby" value={filter} onChange={handleChange} />
-        <button type="submit">Filter</button>
-      </form>
+    <div className={`${common.container}`}>
+      <div className={`${common.flexStart}`}>
+        <h3>Filter by skills: </h3>
+        <form onSubmit={handleSubmit}>
+          <input type="text" placeholder={filters.skill} value={filter} onChange={handleChange} />
+          <button type="submit">Filter</button>
+        </form>
+      </div>
     </div>
   );
 };
