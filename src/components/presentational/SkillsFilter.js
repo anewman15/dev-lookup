@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import changeFilter from '../../redux/actions/filters';
 
-const SkillsFilter = () => {
+const SkillsFilter = ({ filters, changeFilter }) => {
   const [filter, setFilter] = useState('Ruby');
 
   const handleChange = e => {
@@ -9,6 +11,7 @@ const SkillsFilter = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    changeFilter(filter);
     setFilter('');
   };
 
@@ -23,4 +26,8 @@ const SkillsFilter = () => {
   );
 };
 
-export default SkillsFilter;
+const mapStateToProps = state => ({
+  filters: state.filters,
+});
+
+export default connect(mapStateToProps, { changeFilter })(SkillsFilter);
