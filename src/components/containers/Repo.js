@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Repo = ({ index, repo }) => (
   <div>
     <p>{index + 1}</p>
-    <p>{repo.full_name}</p>
-    <p><a href={repo.html_url}>{repo.html_url}</a></p>
-    <p>{repo.language}</p>
-    <p>{repo.description}</p>
+    <Link to={`repo/${repo.full_name}`}>{`https://github.com/${repo.full_name}`}</Link>
     <p>
-      Last updated: &nbsp;
+      Stars: &nbsp;
+      {repo.stargazers_count}
+    </p>
+    <p>{repo.language}</p>
+    <p>
+      Last commited: &nbsp;
       {repo.updated_at}
     </p>
     <hr />
