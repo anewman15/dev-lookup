@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import changeFilter from '../../redux/actions/filters';
@@ -25,6 +26,10 @@ const SkillsFilter = ({ filters, changeFilter }) => {
     </div>
   );
 };
+
+SkillsFilter.propTypes = {
+  changeFilter: PropTypes.function,
+}.isRequired;
 
 const mapStateToProps = state => ({
   filters: state.filters,
