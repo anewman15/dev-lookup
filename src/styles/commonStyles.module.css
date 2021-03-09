@@ -14,3 +14,32 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.textCenter {
+  text-align: center;
+}
+
+input {
+  width: 20rem;
+  padding: 0.4rem;
+  margin: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  border: 1px solid rgb(95, 93, 93);
+}
+
+button {
+  width: 10rem;
+  padding: 0.5rem;
+  margin: 1rem 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: rgb(51, 51, 51);
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+button:hover {
+  background-color: rgb(95, 93, 93);
+}
