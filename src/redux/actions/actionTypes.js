@@ -1,4 +1,3 @@
 export const SAVE_USER_REPOS = 'SAVE_USER_REPOS';
 export const SAVE_USERNAME = 'SAVE_USERNAME';
-export const SAVE_CURRENT_REPO = 'SAVE_CURRENT_REPO';
 export const CHANGE_FILTER = 'CHANGE_FILTER';
