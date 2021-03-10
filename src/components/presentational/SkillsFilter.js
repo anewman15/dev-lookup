@@ -5,7 +5,7 @@ import changeFilter from '../../redux/actions/filters';
 import common from '../../styles/commonStyles.module.css';
 
 const SkillsFilter = ({ filters, changeFilter }) => {
-  const [filter, setFilter] = useState('Ruby');
+  const [filter, setFilter] = useState('');
 
   const handleChange = e => {
     setFilter(e.target.value);
@@ -22,7 +22,7 @@ const SkillsFilter = ({ filters, changeFilter }) => {
       <div className={`${common.flexStart}`}>
         <h3>Filter by skills: </h3>
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder={filters.skill} value={filter} onChange={handleChange} />
+          <input type="text" placeholder="Ruby" value={filter} onChange={handleChange} />
           <button type="submit">Filter</button>
         </form>
       </div>
