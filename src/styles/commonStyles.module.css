@@ -60,3 +60,17 @@ hr {
 .m1 {
   margin: 2rem;
 }
+
+.boxBlack {
+  margin: 2rem auto;
+  padding: 5rem;
+  border: 2px solid rgb(63, 62, 62);
+  color: rgb(63, 62, 62);
+}
+
+.boxRed {
+  margin: 2rem auto;
+  padding: 5rem;
+  border: 2px solid rgb(136, 34, 34);
+  color: rgb(136, 34, 34);
+}

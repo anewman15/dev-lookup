@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import common from '../../styles/commonStyles.module.css';
 
 const NoRepos = ({ username }) => (
-  <div>
-    <p>
+  <div className={`${common.container} ${common.flexCenter}`}>
+    <p className={`${common.boxBlack}`}>
       No repositories available for&nbsp;
       <strong>
         {username}
