@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { saveUserRepos, saveUsername } from '../../redux/actions/user';
+import changeFilter from '../../redux/actions/filters';
 import { fetchUserRepos } from '../../sandbox/fetchData';
 import Loading from '../presentational/Loading';
 import UserNotFound from '../presentational/UserNotFound';
@@ -20,6 +21,7 @@ const UserInfo = props => {
     savedUsername,
     userRepos, saveUserRepos,
     saveUsername,
+    changeFilter,
   } = props;
   const [username, setUsername] = useState('anewman15');
   const [isLoading, setIsLoading] = useState(false);
@@ -52,6 +54,7 @@ const UserInfo = props => {
     setNoReposAvailable(false);
     setNotFound(false);
     setError(false);
+    changeFilter('');
     fetchUserRepos(args);
     saveUsername(username);
   };
@@ -95,4 +98,4 @@ const mapStateToProps = state => ({
   userRepos: selectFilteredRepos(state),
 });
 
-export default connect(mapStateToProps, { saveUserRepos, saveUsername })(UserInfo);
+export default connect(mapStateToProps, { saveUserRepos, saveUsername, changeFilter })(UserInfo);
