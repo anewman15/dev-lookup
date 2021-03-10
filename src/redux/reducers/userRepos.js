@@ -1,10 +1,9 @@
-const userRepos = (state, action) => {
+const userRepos = (state = null, action) => {
   switch (action.type) {
     case 'SAVE_USER_REPOS': {
-      return {
-        ...state,
-        userRepos: action.payload.userRepos,
-      };
+      return [
+        ...action.payload.userRepos,
+      ];
     }
     default: {
       return state;
