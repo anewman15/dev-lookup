@@ -8,7 +8,7 @@ const TopNav = () => (
       <div className={common.flexBetween}>
         <div className={`${common.flexBetween} ${topNav.navLeft}`}>
           <Link className={`${topNav.navLink}`} to="/">
-            <img className={topNav.logo} src="logo.png" alt="dev-lookup-logo" />
+            <img className={topNav.logo} src={`${process.env.PUBLIC_URL}/logo.png`} alt="dev-lookup-logo" />
           </Link>
         </div>
         <div className={`${common.flexBetween} ${topNav.navRight}`}>

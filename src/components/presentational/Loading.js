@@ -1,7 +1,9 @@
+import common from '../../styles/commonStyles.module.css';
+
 const Loading = () => (
-  <di>
-    <p>Loading content</p>
-  </di>
+  <div className={`${common.container} ${common.flexCenter} ${common.m1}`}>
+    <img src={`${process.env.PUBLIC_URL}/loading.gif`} alt="loading" />
+  </div>
 );
 
 export default Loading;

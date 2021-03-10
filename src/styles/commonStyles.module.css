@@ -56,3 +56,7 @@ button:hover {
 hr {
   border: 0.5px solid rgb(95, 93, 93);
 }
+
+.m1 {
+  margin: 2rem;
+}
