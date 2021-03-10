@@ -5,7 +5,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import saveUserRepos from '../../redux/actions/user';
+import { saveUserRepos, saveUsername } from '../../redux/actions/user';
 import { fetchUserRepos } from '../../sandbox/fetchData';
 import Loading from '../presentational/Loading';
 import UserNotFound from '../presentational/UserNotFound';
@@ -15,9 +15,13 @@ import NoRepos from '../presentational/NoRepos';
 import UserRepos from './UserRepos';
 import selectFilteredRepos from '../../redux/selectors/selectFilteredRepos';
 
-const UserInfo = ({ userRepos, saveUserRepos }) => {
+const UserInfo = props => {
+  const {
+    savedUsername,
+    userRepos, saveUserRepos,
+    saveUsername,
+  } = props;
   const [username, setUsername] = useState('anewman15');
-  const [userData, setUserData] = useState(userRepos);
   const [isLoading, setIsLoading] = useState(false);
   const [noReposAvailable, setNoReposAvailable] = useState(false);
   const [notFound, setNotFound] = useState(false);
@@ -28,7 +32,6 @@ const UserInfo = ({ userRepos, saveUserRepos }) => {
     uri,
     username,
     saveUserRepos,
-    setUserData,
     setIsLoading,
     setNoReposAvailable,
     setNotFound,
@@ -46,17 +49,39 @@ const UserInfo = ({ userRepos, saveUserRepos }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    setNoReposAvailable(false);
+    setNotFound(false);
+    setError(false);
     fetchUserRepos(args);
+    saveUsername(username);
   };
+
+  let content;
+
+  if (UserRepos) {
+    content = <UserRepos username={savedUsername} />;
+  }
+  if (isLoading) {
+    content = <Loading />;
+  }
+  if (noReposAvailable) {
+    content = <NoRepos username={savedUsername} />;
+  }
+  if (notFound) {
+    content = <UserNotFound />;
+  }
+  if (error) {
+    content = <SomethingWentWrong />;
+  }
 
   return (
     <div>
-      <SearchUser handleChange={handleChange} handleSubmit={handleSubmit} username={username} />
-      {isLoading ? <Loading /> : null}
-      {userRepos ? <UserRepos username={username} /> : null}
-      {noReposAvailable ? <NoRepos username={username} /> : null}
-      {notFound ? <UserNotFound /> : null}
-      {error ? <SomethingWentWrong /> : null}
+      <SearchUser
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        username={username}
+      />
+      {content}
     </div>
   );
 };
@@ -66,7 +91,8 @@ UserInfo.propTypes = {
 }.isRequired;
 
 const mapStateToProps = state => ({
+  savedUsername: state.username,
   userRepos: selectFilteredRepos(state),
 });
 
-export default connect(mapStateToProps, { saveUserRepos })(UserInfo);
+export default connect(mapStateToProps, { saveUserRepos, saveUsername })(UserInfo);
