@@ -1,16 +1,15 @@
 import { createStore } from 'redux';
 import repos from '../sandbox/repos';
-import user from './reducers/user';
+import combinedReducer from './reducers/combinedReducer';
 
-const userRepos = JSON.parse(repos);
+const userReposInit = JSON.parse(repos);
 
 const initialState = {
   username: 'anewman15',
-  userRepos,
-  currentRepo: {},
+  userRepos: userReposInit,
   filters: {
     skill: '',
   },
 };
 
-export default createStore(user, initialState);
+export default createStore(combinedReducer, initialState);
