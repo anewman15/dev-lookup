@@ -1,6 +1,13 @@
+.repo {
+  padding: 0.2rem 0;
+  margin: 0.5rem 0;
+  background-color: rgb(51, 51, 51);
+  color: rgb(255, 255, 255);
+}
+
 .paragraph {
-  margin: 0 2rem;
-  padding: 0.3rem 1rem;
+  margin: 0.5rem 2rem;
+  padding: 0.2rem 1rem;
   font-size: 0.8rem;
 }
 
@@ -13,7 +20,7 @@
   padding: 0.3rem 1rem;
   text-decoration: none;
   font-size: 1.2rem;
-  color: rgb(51, 51, 51);
+  color: rgb(255, 255, 255);
   font-weight: bolder;
 }
 

@@ -4,7 +4,7 @@ import common from '../../styles/commonStyles.module.css';
 import styleRepo from '../../styles/repo.module.css';
 
 const Repo = ({ index, repo }) => (
-  <div>
+  <div className={`${styleRepo.repo}`}>
     <div className={`${common.flexBetween}`}>
       <div className={`${common.flexBetween}`}>
         <p className={`${styleRepo.paragraph}`}>{index + 1}</p>
@@ -22,7 +22,6 @@ const Repo = ({ index, repo }) => (
     <div className={`${styleRepo.repoUrl}`}>
       <Link className={`${styleRepo.repoLink}`} to={`repo/${repo.full_name}`}>{`https://github.com/${repo.full_name}`}</Link>
     </div>
-    <hr />
   </div>
 );
 
