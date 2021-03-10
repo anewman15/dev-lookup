@@ -22,7 +22,7 @@ const RepoDetails = ({ repoDetails }) => (
           <p>{`Owner: ${repoDetails.owner.login}`}</p>
         </div>
         <div>
-          <a className={`${styleDetails.repoUrl}`} href={repoDetails.html_url}>{repoDetails.html_url}</a>
+          <a className={`${styleDetails.repoUrl}`} href={repoDetails.html_url} target="_blank" rel="noreferrer">{repoDetails.html_url}</a>
         </div>
       </div>
       <hr />
