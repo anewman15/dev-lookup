@@ -1,0 +1,22 @@
+.repoCard {
+  margin: 0.5rem 1rem;
+  padding: 2rem 2rem;
+  background-color: rgb(51, 51, 52);
+  color: rgb(255, 255, 255);
+}
+
+.repoSpecs {
+  margin: 0.5rem 1rem;
+}
+
+.repoUrl {
+  margin: 0.5rem 0;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+}
+
+.repoUrl:hover {
+  color: rgb(170, 164, 164);
+}

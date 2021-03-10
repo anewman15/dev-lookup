@@ -52,3 +52,7 @@ button {
 button:hover {
   background-color: rgb(95, 93, 93);
 }
+
+hr {
+  border: 0.5px solid rgb(95, 93, 93);
+}
