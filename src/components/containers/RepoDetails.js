@@ -1,65 +1,47 @@
-import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
-import { fetchRepoDetails } from '../../sandbox/fetchData';
-import Loading from '../presentational/Loading';
-import SomethingWentWrong from '../presentational/SomethingWentWrong';
+import styleDetails from '../../styles/repoDetails.module.css';
+import common from '../../styles/commonStyles.module.css';
 
-const RepoDetails = ({ match }) => {
-  const [repoDetails, setRepoDetails] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const uri = `https://api.github.com/repos/${match.params.repo_owner}/${match.params.repo_name}`;
-
-  const args = {
-    setRepoDetails,
-    setIsLoading,
-    setError,
-    uri,
-  };
-
-  useEffect(() => {
-    fetchRepoDetails(args);
-  }, []);
-
-  return (
-    <div>
-      {isLoading ? <Loading /> : null}
-      {error ? <SomethingWentWrong /> : null}
-      <div>
-        <p>{repoDetails.full_name}</p>
-        <a href={repoDetails.html_url}>{repoDetails.html_url}</a>
-        <p>{repoDetails.language}</p>
-        <p>{repoDetails.description ? repoDetails.description : 'No description available'}</p>
-        <p>
-          Created: &nbsp;
-          {repoDetails.created_at}
-        </p>
-        <p>
-          Last updated: &nbsp;
-          {repoDetails.updated_at}
-        </p>
-        <p>
-          Stars: &nbsp;
-          {repoDetails.stargazers_count}
-        </p>
-        <p>
-          Watchers: &nbsp;
-          {repoDetails.watchers_count}
-        </p>
-        <p>
-          Subscribers: &nbsp;
-          {repoDetails.subscribers_count}
-        </p>
-        <hr />
+const RepoDetails = ({ repoDetails }) => (
+  <div className={`${common.container}`}>
+    <div className={`${styleDetails.repoCard}`}>
+      <div className={`${common.flexBetween}`}>
+        <div className={`${common.flexBetween}`}>
+          <p>{repoDetails.language ? `Language: ${repoDetails.language}` : 'Language: None yet'}</p>
+          <p className={`${styleDetails.repoSpecs}`}>{`Stars: ${repoDetails.stargazers_count}`}</p>
+        </div>
+        <div className={`${common.flexBetween}`}>
+          <p className={`${styleDetails.repoSpecs}`}>{`Watchers: ${repoDetails.watchers_count}`}</p>
+          <p>{`Subscribers: ${repoDetails.subscribers_count}`}</p>
+        </div>
       </div>
+      <hr />
+      <div>
+        <div className={`${common.flexBetween}`}>
+          <p>{`Repository Name: ${repoDetails.full_name}`}</p>
+          <p>{`Owner: ${repoDetails.owner.login}`}</p>
+        </div>
+        <div>
+          <a className={`${styleDetails.repoUrl}`} href={repoDetails.html_url} target="_blank" rel="noreferrer">{repoDetails.html_url}</a>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <p>Description:</p>
+        <p>{repoDetails.description ? repoDetails.description : 'No description available'}</p>
+      </div>
+      <hr />
+      <div className={`${common.flexBetween}`}>
+        <p>{`Created: ${repoDetails.created_at}`}</p>
+        <p>{`Last updated: ${repoDetails.updated_at}`}</p>
+      </div>
+      <hr />
     </div>
-  );
-};
+  </div>
+);
 
 RepoDetails.propTypes = {
-  index: PropTypes.number,
-  repo: PropTypes.object,
+  repoDetails: PropTypes.object,
 }.isReuired;
 
-export default withRouter(RepoDetails);
+export default RepoDetails;

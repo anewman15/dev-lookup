@@ -1,6 +1,8 @@
+import common from '../../styles/commonStyles.module.css';
+
 const UserNotFound = () => (
-  <div>
-    <p>User not found</p>
+  <div className={`${common.container} ${common.flexCenter}`}>
+    <p className={`${common.boxRed}`}>User not found</p>
   </div>
 );
 

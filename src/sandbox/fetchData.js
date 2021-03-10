@@ -8,7 +8,6 @@ const fetchUserRepos = async args => {
     if (data instanceof Array) {
       if (data.length) {
         args.saveUserRepos(data);
-        args.setUserData(data);
         args.setNoReposAvailable(false);
         args.setNotFound(false);
         args.setError(false);

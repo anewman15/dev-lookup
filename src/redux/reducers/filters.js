@@ -1,11 +1,9 @@
-const filters = (state, action) => {
+const filters = (state = '', action) => {
   switch (action.type) {
     case 'CHANGE_FILTER': {
       return {
         ...state,
-        filters: {
-          skill: action.payload.filter,
-        },
+        skill: action.payload.filter,
       };
     }
     default: {

@@ -1,4 +1,4 @@
-import { SAVE_USER_REPOS } from './actionTypes';
+import { SAVE_USERNAME, SAVE_USER_REPOS } from './actionTypes';
 
 const saveUserRepos = userRepos => (
   {
@@ -9,4 +9,13 @@ const saveUserRepos = userRepos => (
   }
 );
 
-export default saveUserRepos;
+const saveUsername = username => (
+  {
+    type: SAVE_USERNAME,
+    payload: {
+      username,
+    },
+  }
+);
+
+export { saveUserRepos, saveUsername };

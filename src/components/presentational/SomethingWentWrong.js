@@ -1,6 +1,8 @@
+import common from '../../styles/commonStyles.module.css';
+
 const SomethingWentWrong = () => (
-  <div>
-    <p>Something&apos;s Wrong</p>
+  <div className={`${common.container} ${common.flexCenter}`}>
+    <p className={`${common.boxRed}`}>Something&apos;s WRONG. Maybe Your Internet?</p>
   </div>
 );
 
