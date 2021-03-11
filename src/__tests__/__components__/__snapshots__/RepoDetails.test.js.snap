@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RepoDetails renders the repository div 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="repoCard"
+  >
+    <div
+      className="flexBetween"
+    >
+      <div
+        className="flexBetween"
+      >
+        <p>
+          Language: Ruby
+        </p>
+        <p
+          className="repoSpecs"
+        >
+          Stars: 7
+        </p>
+      </div>
+      <div
+        className="flexBetween"
+      >
+        <p
+          className="repoSpecs"
+        >
+          Watchers: 7
+        </p>
+        <p>
+          Subscribers: undefined
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <div
+        className="flexBetween"
+      >
+        <p>
+          Repository Name: anewman15/activize
+        </p>
+        <p>
+          Owner: anewman15
+        </p>
+      </div>
+      <div>
+        <a
+          className="repoUrl"
+          href="https://github.com/anewman15/activize"
+          rel="noreferrer"
+          target="_blank"
+        >
+          https://github.com/anewman15/activize
+        </a>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <p>
+        Description:
+      </p>
+      <p>
+        This is an activity logger app that helps a user create daily activities and categorize them according to various groups they have in mind. They are able to name and create those groups according to their convenience.
+      </p>
+    </div>
+    <hr />
+    <div
+      className="flexBetween"
+    >
+      <p>
+        Created: 2020-11-03T10:54:13Z
+      </p>
+      <p>
+        Last updated: 2021-02-26T15:07:02Z
+      </p>
+    </div>
+    <hr />
+  </div>
+</div>
+`;

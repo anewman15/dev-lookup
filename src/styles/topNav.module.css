@@ -1,0 +1,38 @@
+html {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navBar {
+  height: 3.5rem;
+  background-color: rgb(220, 220, 220);
+  text-align: center;
+}
+
+.logo {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.navLeft {
+  flex-grow: 4;
+  flex-shrink: 1;
+}
+
+.navRight {
+  width: 50%;
+  flex-grow: 1;
+  flex-shrink: 2;
+}
+
+.navLink {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0 1rem;
+  margin: 0 1rem;
+}
+
+.navLink:hover {
+  color: rgb(95, 93, 93);
+}
