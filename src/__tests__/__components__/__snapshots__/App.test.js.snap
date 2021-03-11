@@ -38,10 +38,9 @@ Array [
           </a>
           <a
             className="navLink"
-            href="/"
-            onClick={[Function]}
+            href="https://github.com/anewman15?tab=repositories"
           >
-            Get anewman15's repos
+            anewman15
           </a>
         </div>
       </div>
