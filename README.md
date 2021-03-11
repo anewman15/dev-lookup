@@ -25,8 +25,9 @@ Available [here](https://dev-lookup.herokuapp.com/)
 3. Run `npm install`
 4. Then run `npm run start`
 5. Open `http://localhost:3000` in your browser and navigate around the site.
-6. Navigate through the website and find the Calculator app page
-7. Make calculations
+6. Navigate through the website
+7. Use the form to lookup GitHub users
+8. Filter results according to language
 
 ## Testing
 1. Run `npm run test` in the Terminal to run the tests
