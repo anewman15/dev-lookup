@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SomethingWentWrong renders the something is wrong message 1`] = `
+<div
+  className="container flexCenter"
+>
+  <p
+    className="boxRed"
+  >
+    Something's WRONG. Maybe Your Internet?
+  </p>
+</div>
+`;

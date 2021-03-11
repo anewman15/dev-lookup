@@ -13,7 +13,7 @@ const TopNav = () => (
         </div>
         <div className={`${common.flexBetween} ${topNav.navRight}`}>
           <Link className={`${topNav.navLink}`} to="/">Home</Link>
-          <Link className={`${topNav.navLink}`} to="/">Get anewman15&apos;s repos</Link>
+          <a className={`${topNav.navLink}`} href="https://github.com/anewman15?tab=repositories">anewman15</a>
         </div>
       </div>
     </div>

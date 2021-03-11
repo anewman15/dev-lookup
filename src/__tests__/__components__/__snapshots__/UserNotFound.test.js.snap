@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserNotFound renders the user not found message 1`] = `
+<div
+  className="container flexCenter"
+>
+  <p
+    className="boxRed"
+  >
+    User not found
+  </p>
+</div>
+`;
