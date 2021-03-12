@@ -23,21 +23,11 @@ const RepoInfo = ({ match }) => {
     fetchRepoDetails(args);
   }, []);
 
-  let content;
-
-  if (isLoading) {
-    content = <Loading />;
-  }
-  if (error) {
-    content = <SomethingWentWrong />;
-  }
-  if (repoDetails.id) {
-    content = <RepoDetails repoDetails={repoDetails} />;
-  }
-
   return (
     <div>
-      {content}
+      {isLoading && <Loading />}
+      {error && <SomethingWentWrong />}
+      {repoDetails.id && <RepoDetails repoDetails={repoDetails} />}
     </div>
   );
 };

@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import selectFilteredRepos from '../../redux/selectors/selectFilteredRepos';
 import SkillsFilter from '../presentational/SkillsFilter';
 import Repo from './Repo';
-import common from '../../styles/commonStyles.module.css';
+import { container, textCenter } from '../../styles/commonStyles.module.css';
 
 const UserRepos = ({ username, userRepos }) => {
   const repos = userRepos.map((repo, index) => <Repo key={repo.id} repo={repo} index={index} />);
 
   return (
-    <div className={`${common.container}`}>
-      <h2 className={`${common.textCenter} `}>
+    <div className={`${container}`}>
+      <h2 className={`${textCenter} `}>
         {`Search for ${username} returned ${userRepos.length} repositories`}
       </h2>
       <SkillsFilter />
