@@ -26,7 +26,7 @@ const SkillsFilter = ({ filters, changeFilter }) => {
           <button type="submit">Filter</button>
         </form>
       </div>
-      { filters.skill ? <p>{`Showing repos for ${filters.skill}`}</p> : null }
+      { filters.skill && <p>{`Showing repos for ${filters.skill}`}</p> }
     </div>
   );
 };
