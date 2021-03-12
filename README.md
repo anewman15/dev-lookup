@@ -1,4 +1,4 @@
-# DevLookup - Catalogue Developer Repositories
+# DevLookup - Catalogue of Repositories
 
 This is a React app that uses GitHub API to present information about developers. It lets you lookup a developer by GitHub username, lists all their repos if available and allows you to filter them according to their stack information
 
