@@ -59,24 +59,6 @@ const UserInfo = props => {
     saveUsername(username);
   };
 
-  let content;
-
-  if (UserRepos) {
-    content = <UserRepos username={savedUsername} />;
-  }
-  if (isLoading) {
-    content = <Loading />;
-  }
-  if (noReposAvailable) {
-    content = <NoRepos username={savedUsername} />;
-  }
-  if (notFound) {
-    content = <UserNotFound />;
-  }
-  if (error) {
-    content = <SomethingWentWrong />;
-  }
-
   return (
     <div>
       <SearchUser
@@ -84,7 +66,11 @@ const UserInfo = props => {
         handleSubmit={handleSubmit}
         username={username}
       />
-      {content}
+      {userRepos && <UserRepos username={savedUsername} />}
+      {isLoading && <Loading />}
+      {noReposAvailable && <NoRepos username={savedUsername} />}
+      {notFound && <UserNotFound />}
+      {error && <SomethingWentWrong />}
     </div>
   );
 };
