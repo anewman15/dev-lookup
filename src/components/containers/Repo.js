@@ -8,6 +8,7 @@ import { flexBetween, flexStart } from '../../styles/commonStyles.module.css';
 import {
   repo as repoItem, paragraph, repoUrl, repoLink,
 } from '../../styles/repo.module.css';
+import { timeFromNow } from '../../utils/date';
 
 const Repo = ({ index, repo }) => {
   const {
@@ -26,7 +27,7 @@ const Repo = ({ index, repo }) => {
             {`Stars: ${stargazers_count}`}
           </p>
           <p className={`${paragraph}`}>
-            {`Last commited: ${updated_at}`}
+            {`Last commited: ${timeFromNow(updated_at)} ago`}
           </p>
         </div>
       </div>
