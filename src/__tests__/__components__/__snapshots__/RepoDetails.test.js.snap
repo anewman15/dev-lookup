@@ -61,9 +61,6 @@ exports[`RepoDetails renders the repository div 1`] = `
     <hr />
     <div>
       <p>
-        Description:
-      </p>
-      <p>
         This is an activity logger app that helps a user create daily activities and categorize them according to various groups they have in mind. They are able to name and create those groups according to their convenience.
       </p>
     </div>
@@ -72,10 +69,10 @@ exports[`RepoDetails renders the repository div 1`] = `
       className="flexBetween"
     >
       <p>
-        Created: 2020-11-03T10:54:13Z
+        Created: Nov 03, 2020, 16:54
       </p>
       <p>
-        Last updated: 2021-02-26T15:07:02Z
+        Last committed: 4 months ago
       </p>
     </div>
     <hr />

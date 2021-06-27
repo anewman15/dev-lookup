@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { container, flexBetween } from '../../styles/commonStyles.module.css';
 import { repoCard, repoUrl, repoSpecs } from '../../styles/repoDetails.module.css';
+import { formattedDate, timeFromNow } from '../../utils/date';
 
 const RepoDetails = ({ repoDetails }) => (
   <div className={`${container}`}>
@@ -27,13 +28,12 @@ const RepoDetails = ({ repoDetails }) => (
       </div>
       <hr />
       <div>
-        <p>Description:</p>
         <p>{repoDetails.description ? repoDetails.description : 'No description available'}</p>
       </div>
       <hr />
       <div className={`${flexBetween}`}>
-        <p>{`Created: ${repoDetails.created_at}`}</p>
-        <p>{`Last updated: ${repoDetails.updated_at}`}</p>
+        <p>{`Created: ${formattedDate(repoDetails.created_at)}`}</p>
+        <p>{`Last committed: ${timeFromNow(repoDetails.updated_at)} ago`}</p>
       </div>
       <hr />
     </div>
