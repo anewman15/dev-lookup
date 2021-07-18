@@ -3,6 +3,8 @@
   padding: 2rem 2rem;
   background-color: rgb(51, 51, 52);
   color: rgb(255, 255, 255);
+  border: 1px solid rgb(95, 93, 93);
+  border-radius: 4px;
 }
 
 .repoSpecs {

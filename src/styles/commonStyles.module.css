@@ -35,6 +35,7 @@ input {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1rem;
   border: 1px solid rgb(95, 93, 93);
+  border-radius: 4px;
 }
 
 button {
@@ -47,6 +48,7 @@ button {
   background-color: rgb(51, 51, 51);
   color: #fff;
   border: 1px solid #fff;
+  border-radius: 4px;
 }
 
 button:hover {
@@ -67,6 +69,7 @@ hr {
   font-size: 1.5rem;
   font-weight: bolder;
   border: 2px solid rgb(63, 62, 62);
+  border-radius: 4px;
   color: rgb(63, 62, 62);
 }
 
@@ -76,5 +79,6 @@ hr {
   font-size: 1.5rem;
   font-weight: bolder;
   border: 2px solid rgb(136, 34, 34);
+  border-radius: 4px;
   color: rgb(136, 34, 34);
 }
